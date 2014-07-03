@@ -28,18 +28,22 @@ public class TennisGameTest {
                 {0, 1, "love fifteen"},
                 {0, 2, "love thirty"},
                 {0, 3, "love forty"},
+
                 {1, 1, "fifteen all"},
                 {2, 2, "thirty all"},
                 {3, 3, "deuce"},
                 {4, 4, "deuce"},
+
                 {4, 3, "Federer advantage"},
                 {3, 4, "Nadal advantage"},
                 {5, 4, "Federer advantage"},
                 {4, 5, "Nadal advantage"},
+
                 {4, 0, "Federer wins"},
                 {5, 3, "Federer wins"},
                 {0, 4, "Nadal wins"},
                 {3, 5, "Nadal wins"},
+
                 {100, 100, "deuce"},
                 {101, 100, "Federer advantage"},
                 {100, 101, "Nadal advantage"},
@@ -74,14 +78,13 @@ public class TennisGameTest {
             mGame.player1GetPoint();
             mGame.player2GetPoint();
         }
-        for (; i < maxPoint; i++) {
-            if (maxPoint == pointOfPlayer1) {
-                mGame.player1GetPoint();
-            }
-            if (maxPoint == pointOfPlayer2) {
-                mGame.player2GetPoint();
-            }
-        }
-    }
 
+        if (maxPoint == pointOfPlayer1)
+            for (; i < maxPoint; i++)
+                mGame.player1GetPoint();
+
+        if (maxPoint == pointOfPlayer2)
+            for (; i < maxPoint; i++)
+                mGame.player2GetPoint();
+    }
 }
